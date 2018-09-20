@@ -26,11 +26,23 @@ const { ObjectId } = require('mongodb');
 //     console.log('todo by id', todo);
 // }).catch((e) => console.log(e));
 
-let id = '5ba1c075aba73732d05036df';
+// let id = '5ba1c075aba73732d05036df';
+//
+// User.findById(id).then((user) => {
+//     if (!user) {
+//         console.log('user not found.');
+//     }
+//     console.log('user by id', user);
+// }).catch((e) => console.log(e));
 
-User.findById(id).then((user) => {
-    if (!user) {
-        console.log('user not found.');
-    }
-    console.log('user by id', user);
-}).catch((e) => console.log(e));
+// Todo.remove({}).then((result) => {
+//     console.log(result);
+// });
+
+Todo.findOneAndDelete({_id: '5ba34a266e89a00be20149e5'}).then((todo) => {
+    console.log(todo);
+});
+
+Todo.findByIdAndDelete('5ba34a266e89a00be20149e5').then((todo) => {
+    console.log(todo);
+});
